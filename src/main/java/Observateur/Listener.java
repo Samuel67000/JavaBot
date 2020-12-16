@@ -26,7 +26,9 @@ public class Listener extends ListenerAdapter {
     @Override
     public void onMessageReactionAdd(@NotNull MessageReactionAddEvent event) {
         super.onMessageReactionAdd(event);
-        if(event.getUser().isBot()) return;
+        if(event.getUser().isBot()) {
+            return;
+        }
         Message message = event.retrieveMessage().complete();
         String tag = message.getEmbeds().get(0).getFooter().getText().split(":")[1];
         if(tag.equalsIgnoreCase("config")){
@@ -35,7 +37,7 @@ public class Listener extends ListenerAdapter {
                 message.removeReaction(event.getReaction().getReactionEmote().getId()).queue();
             }
         }
-
+        //random
         System.out.println(message.getEmbeds().get(0).getTitle());
 
 
