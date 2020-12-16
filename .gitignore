@@ -5,7 +5,7 @@
 *.log
 
 # Json config
-C:\Users\Samuel\IdeaProjects\JavaBot\config.json
+config.json
 
 # BlueJ files
 *.ctxt
