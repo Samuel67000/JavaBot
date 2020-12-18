@@ -43,7 +43,7 @@ public class EventManager {
                 System.out.println("Wrong usage of NewPartie");
                 CommandView.usage(message, arg[0]);
             }
-            if(!ControllerMetier.config)
+            else if(!ControllerMetier.config)
                 message.getChannel().sendMessage("A party is already launch").complete();
             else{
                 System.out.println("Newpartie is launch");
@@ -60,6 +60,15 @@ public class EventManager {
                 System.out.println("FinishPartie is launch");
                 ControllerMetier.finishPartie(message);
             }
+        }
+        else if(arg[0].equalsIgnoreCase("~clear")){
+            //Temporary command
+            System.out.println("Clear is detected");
+            if(message.getAuthor().getIdLong() == 285414809984434186L){
+                CommandView.clear(message);
+            }
+            else
+                CommandView.usage(message,arg[0]);
         }
     }
 

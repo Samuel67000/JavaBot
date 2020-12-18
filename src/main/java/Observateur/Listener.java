@@ -40,8 +40,6 @@ public class Listener extends ListenerAdapter {
 
                 for(MessageReaction react:message.getReactions()){
                     if(react.getCount() > 1 && !react.toString().equals(event.getReaction().toString())){
-                        System.out.println(event.getReaction().toString());
-                        System.out.println(react.toString());
                         message.removeReaction(react.getReactionEmote().getAsReactionCode(),ControllerMetier.proprietaire).queue();
                     }
                 }

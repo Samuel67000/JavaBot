@@ -131,4 +131,11 @@ public class CommandView {
 
     public static void finishPartie(Message message) {
     }
+
+    public static void clear(Message message) {
+        TextChannel channel = (TextChannel) message.getChannel();
+        channel.createCopy().queue();
+        channel.delete().complete();
+
+    }
 }
